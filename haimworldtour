@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>haim's world tour... if they were actually coming to your town</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      color: #444;
+      font-size: 2em;
+      text-transform: lowercase;
+    }
+    #eventOutput {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #555;
+      padding: 20px;
+      background-color: #e0e4eb;
+      border-radius: 8px;
+      display: none;
+    }
+    button {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #222;
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      width: 200px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>haim's world tour... if they were actually coming to your town</h1>
+<p>type your town and discover the haim event no one asked for</p>
+
+<input type="text" id="townInput" placeholder="enter your town">
+<button onclick="generateTourEvent()">generate tour event</button>
+
+<div id="eventOutput"></div>
+
+<script>
+  function generateTourEvent() {
+    const town = document.getElementById("townInput").value;
+    const events = [
+      `este’s teaching a masterclass in “holding a grudge for 10 years” at ${town}'s middle school. free refreshments: iced coffee only.`,
+      `danielle will be doing her taxes onstage in ${town}. audience will receive an IRS pamphlet and a signed copy of her 2020 W-2.`,
+      `alana is giving a one-hour seminar in ${town}'s grocery store about "why deodorant is a suggestion, not a rule."`,
+      `come watch danielle browse ${town}’s record store for exactly 3 hours. she'll be deep in thought but won't buy anything.`,
+      `alana will host a *twilight* marathon at ${town}'s library. snacks include pretzels, cheese cubes, and emotional instability.`,
+      `este will give a tutorial at ${town}'s gas station on "how to steal your friends' clothes without them noticing." bring a tote bag.`,
+      `danielle will perform a solo concert at ${town}'s quietest cafe. every song will have a 15-minute pause for her to sip a latte and stare into space.`,
+      `alana will be at ${town}'s cemetery, doing a “haunting but make it fashion” photo shoot. BYO fog machine.`,
+      `este’s hosting a "best insult for your ex" brainstorming session at ${town}'s public library. BYO emotional baggage.`,
+      `danielle's gonna walk in circles around ${town}'s parking lot while wearing sunglasses. no one will know if it's an event or just another tuesday.`,
+      `alana's doing a "find my vibe" tour of ${town}'s local parks. all attendees must wear a hat and be slightly aloof.`,
+      `catch all three sisters aimlessly wandering around ${town}’s grocery store. they’ll mostly talk about almond milk options and then leave empty-handed.`,
+      `danielle’s doing a “why i never respond to your texts” workshop at ${town}’s city hall. proceeds go to her self-care fund.`,
+      `alana’s holding an in-depth Q&A at ${town}’s smallest park on the pros and cons of socks with sandals.`,
+      `este is reading strangers' horoscopes at ${town}'s town square. she has no idea what she’s talking about but will definitely make it sound dramatic.`,
+      `danielle is staring out the window of ${town}’s slowest diner. she'll be available for photos if you don't disturb her deep thoughts.`,
+      `alana will host a "crying at sad movies" support group in ${town}’s public library. BYO tissue.`,
+      `este is giving a live demonstration on "dramatic eye contact" at ${town}'s busiest intersection. please clap quietly.`,
+      `alana will be curating the “haim sisters' favorite mugs” exhibit in ${town}'s second-fanciest thrift store. entry fee: one compliment.`,
+      `come see danielle perform an exclusive set in ${town}’s laundromat. the entire show is her adjusting the volume on her AirPods.`,
+      `este will be teaching "How to Pretend You Don't Recognize Your Ex's Texts" at ${town}’s coffee shop. seating is limited.`,
+      `alana is doing a TED talk at ${town}'s rec center titled, "why 2013 was actually the best year ever." entrance fee: one pack of gum.`,
+      `danielle will hold a solo "existential crisis" night at ${town}'s ice cream shop. come watch her decide between chocolate and vanilla.`,
+      `catch haim at ${town}'s playground, discussing life’s deepest mysteries while waiting in line for the swings. admission: one vague compliment.`,
+      `este's teaching “how to pick the right middle finger emoji” at ${town}’s public library. optional certificate included.`,
+      `alana’s inviting everyone to “whispering at concerts” seminar at ${town}’s library. requirement: no actual singing allowed.`,
+      `danielle will be quietly judging everyone’s Spotify playlists at ${town}’s record store. bring your deepest regrets.`,
+      `este’s holding a contest for "who can stay silent the longest" at ${town}'s art gallery. winner gets a vague pat on the back.`,
+      `alana’s hosting a guided tour of ${town}’s mall to discuss “how every single product is a scam.” tissues will be provided.`,
+      `danielle’s hosting a "how to wear black in every season" workshop at ${town}'s fashion boutique. BYO existential dread.`,
+      `alana will be at ${town}'s music store, explaining why every song needs a tambourine solo. skeptical attendees welcome.`
+    ];
+
+    const randomEvent = events[Math.floor(Math.random() * events.length)];
+    const eventOutput = document.getElementById("eventOutput");
+
+    if (town.trim() !== "") {
+      eventOutput.innerHTML = `<strong>event in ${town}:</strong><br>${randomEvent}`;
+      eventOutput.style.display = "block";
+    } else {
+      eventOutput.innerHTML = "please enter a town to generate an event.";
+      eventOutput.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
